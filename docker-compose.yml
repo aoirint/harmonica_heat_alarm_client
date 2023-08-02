@@ -1,0 +1,10 @@
+services:
+  app:
+    image: ghcr.io/aoirint/harmonica_heat_alarm_client
+    restart: always
+    devices:
+      - "${HHAC_PORT:?}"
+    environment:
+      - "HHAC_PORT=${HHAC_PORT:?}"
+      - "HHAC_BAUDRATE=${HHAC_BAUDRATE:?}"
+      - "HOST_DIALOUT_GID=${HOST_DIALOUT_GID:?}"
